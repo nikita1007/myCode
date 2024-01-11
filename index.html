@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой код</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Unbounded&display=swap"
+        rel="stylesheet">
+
+    <!-- Own styles -->
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="site-icon header__item">
+                <a href="/">
+                    <svg id="favicon" width="43" height="43" viewBox="0 0 43 43" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M34.7583 21.6777H21.5V8.17352C21.5 3.55368 17.5583 0 13.2583 0H8.24166C3.58333 0 0 3.55368 0 8.17352V13.1488C0 17.7686 3.58333 21.3223 8.24166 21.3223H21.5V34.8264C21.5 39.4463 25.0833 43 29.7417 43H34.7583C39.4167 43 43 39.4463 43 34.8264V29.8512C43 25.5868 39.4167 21.6777 34.7583 21.6777ZM15.4083 15.9917H7.88334C6.45 15.9917 5.375 14.9256 5.375 13.5041V8.52891C5.375 7.10742 6.45 6.04132 7.88334 6.04132H12.9C14.3333 6.04132 15.4083 7.10742 15.4083 8.52891V15.9917ZM37.2667 35.1818C37.2667 36.6033 36.1917 37.6694 34.7583 37.6694H29.7417C28.3083 37.6694 27.2333 36.6033 27.2333 35.1818V27.719H34.7583C36.1917 27.719 37.2667 28.7851 37.2667 30.2066V35.1818Z"
+                            fill="#020203" />
+                    </svg>
+                    <svg id="my_code" width="67" height="50" viewBox="0 0 67 50" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.0239 5.03809V22.0703H18.2895V6.33422L19.1457 6.40724L12.8064 22.0886H9.327L2.98764 6.462L3.8256 6.37072V22.0886H0.00012207V5.05635H5.79299L11.7862 20.2265H10.3471L16.3404 5.05635H22.0239V5.03809Z"
+                            fill="#020203" />
+                        <path
+                            d="M48.1464 22.0709V5.03871H51.899V20.1176L50.7514 19.8985L61.4809 5.03871H66.4905V22.0709H62.7379V6.79123L63.8855 7.01028L53.0102 22.0709H48.1464ZM51.8626 0.000244141H54.923C55.1052 0.529649 55.3784 0.931268 55.7792 1.22335C56.1617 1.51544 56.6536 1.66147 57.2365 1.66147C57.8194 1.66147 58.3113 1.51544 58.6938 1.22335C59.0764 0.931268 59.3496 0.529649 59.5136 0.000244141H62.5922C62.2825 1.33288 61.6631 2.31867 60.7158 2.93935C59.7686 3.56003 58.6027 3.87037 57.2183 3.87037C55.852 3.87037 54.6862 3.56003 53.7207 2.93935C52.7916 2.30041 52.1541 1.33288 51.8626 0.000244141Z"
+                            fill="#020203" />
+                        <path
+                            d="M37.6014 4.47241H32.4826C28.7664 4.47241 25.7425 7.5028 25.7425 11.2269V15.3343C25.7425 19.0584 28.7664 22.0888 32.4826 22.0888H37.6014C41.3176 22.0888 44.3416 19.0584 44.3416 15.3343V11.2269C44.3416 7.5028 41.3176 4.47241 37.6014 4.47241ZM40.7893 14.5494C40.7893 16.8495 38.9313 18.7116 36.636 18.7116H33.4663C31.171 18.7116 29.3129 16.8495 29.3129 14.5494V12.0119C29.3129 9.71169 31.171 7.84965 33.4663 7.84965H36.6177C38.913 7.84965 40.7711 9.71169 40.7711 12.0119V14.5494H40.7893Z"
+                            fill="#020203" />
+                        <path
+                            d="M0.00012207 46.3098V29.2776H4.53604V43.1881L3.24267 42.4214L15.721 29.2958H20.5848L4.11707 46.3098H0.00012207ZM9.61846 37.9671L12.8974 35.4844L20.8763 46.2916H15.6664L9.61846 37.9671Z"
+                            fill="#020203" />
+                        <path
+                            d="M43.4269 49.7766V42.8943H46.6512L48.3089 42.9308H60.7326L61.6799 42.8943H66.3251V49.7766H62.6636V46.308H47.0884V49.7766H43.4269ZM47.1249 29.2576H63.3012V45.0667H59.421V30.8823L61.1698 32.6166H49.2198L50.8593 31.3752C50.9503 32.1419 51.005 32.8904 51.0414 33.6206C51.0779 34.3691 51.0961 35.0628 51.0961 35.7017C51.0961 37.5455 50.9503 39.1154 50.6589 40.3933C50.3674 41.6712 49.9302 42.6387 49.3473 43.2959C48.7644 43.9531 48.0357 44.2817 47.1795 44.2817L45.5765 42.9491C46.214 42.2188 46.7059 41.1966 47.0156 39.8639C47.3252 38.5313 47.4892 36.8883 47.4892 34.8985C47.4892 34.0222 47.4528 33.1095 47.3981 32.1419C47.3253 31.2109 47.2342 30.2434 47.1249 29.2576Z"
+                            fill="#020203" />
+                        <path
+                            d="M33.9423 29.2576H28.8235C25.1073 29.2576 22.0833 32.288 22.0833 36.012V40.1195C22.0833 43.8436 25.1073 46.874 28.8235 46.874H33.9423C37.6585 46.874 40.6824 43.8436 40.6824 40.1195V36.012C40.6642 32.288 37.6585 29.2576 33.9423 29.2576ZM37.112 39.3345C37.112 41.6347 35.2539 43.4967 32.9586 43.4967H29.7889C27.4937 43.4967 25.6356 41.6347 25.6356 39.3345V36.797C25.6356 34.4969 27.4937 32.6348 29.7889 32.6348H32.9586C35.2539 32.6348 37.112 34.4969 37.112 36.797V39.3345Z"
+                            fill="#020203" />
+                    </svg>
+                </a>
+            </div>
+            <nav class="navigate header__item">
+                <ul class="navigate__list">
+                    <li class="navigate_list_item"><a href="#">О приложении</a></li>
+                    <li class="navigate_list_item"><a href="#">Почему мы?</a></li>
+                    <li class="navigate_list_item"><a href="#">Отзывы</a></li>
+                    <li class="navigate_list_item"><a href="#">Ассортимент</a></li>
+                    <li class="navigate_list_item" id="download_button"><a href="#">Скачать</a></li>
+                </ul>
+            </nav>
+            <div class="burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="preview">
+            <div class="container">
+                <h1 class="preview__text">Сервис умных qr-кодов</h1>
+                <a class="btn" href="#">Посмотреть ассортимент
+                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.3105 1C10.3105 0.57852 9.96885 0.236842 9.54737 0.236842H2.67895C2.25747 0.236842 1.91579 0.57852 1.91579 1C1.91579 1.42148 2.25747 1.76316 2.67895 1.76316H8.78421V7.86842C8.78421 8.2899 9.12589 8.63158 9.54737 8.63158C9.96885 8.63158 10.3105 8.2899 10.3105 7.86842V1ZM1.53963 10.087L10.087 1.53963L9.00773 0.460366L0.460366 9.00773L1.53963 10.087Z"
+                            fill="#292524" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="interestings">
+            <div class="container">
+                <h2 class="title">Знаете ли вы?</h2>
+                <ul class="cards">
+                    <li class="card">
+                        <svg class="card__icon" width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="7" y="26.0332" width="66.0879" height="44.967" stroke="#FCBB6E"
+                                stroke-width="11.5824" stroke-linejoin="round" />
+                            <path d="M54.6923 23.989V9H25.3956V23.989" stroke="#FCBB6E" stroke-width="11.5824"
+                                stroke-linejoin="round" />
+                            <path d="M26.0769 24.3296V69.9779" stroke="#FCBB6E" stroke-width="11.5824" />
+                            <path d="M54.6923 24.3296V69.9779" stroke="#FCBB6E" stroke-width="11.5824" />
+                        </svg>
+                        <div class="card__content">
+                            <div class="card__title">3 000+</div>
+                            <p class="card__text">вещей теряет человек в среднем за свою жизнь</p>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <svg class="card__icon" width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_2509_23" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1"
+                                width="78" height="78">
+                                <circle cx="40" cy="40" r="33" fill="#CDC1FF" stroke="black" stroke-width="12" />
+                            </mask>
+                            <g mask="url(#mask0_2509_23)">
+                                <circle cx="21.7029" cy="5.36621" r="33" stroke="#CDC1FF" stroke-width="12" />
+                                <circle cx="76.9208" cy="24.6437" r="24.8317" stroke="#CDC1FF" stroke-width="12" />
+                                <circle cx="29.5444" cy="53.7229" r="5.55446" fill="#CDC1FF" />
+                                <circle cx="50.4556" cy="53.7229" r="5.55446" fill="#CDC1FF" />
+                            </g>
+                            <circle cx="40" cy="40" r="33" stroke="#CDC1FF" stroke-width="12" />
+                        </svg>
+                        <div class="card__content">
+                            <div class="card__title">40%</div>
+                            <p class="card__text">рост шанса пропасть за каждые 10 лет нашей жизни</p>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <svg class="card__icon" width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M72.7065 13.7072L72.7065 31.4046L72.7065 33.9962L72.7065 55.8473C72.7065 65.3204 65.041 73 55.585 73L24.1216 73C14.6656 73 7.00003 65.3204 7.00003 55.8473L7.00003 31.4046C7.00003 30.8814 7.02341 30.3637 7.06918 29.8525L7.06918 13.7072C7.06918 9.17804 12.089 6.45942 15.8716 8.94004L23.9722 14.2525C24.0219 14.2521 24.0717 14.2519 24.1216 14.2519L55.585 14.2519C55.6576 14.2519 55.7301 14.2524 55.8024 14.2533L63.9042 8.94004C67.6867 6.45943 72.7065 9.17804 72.7065 13.7072Z"
+                                stroke="#7AE582" stroke-width="12.0109" />
+                            <circle cx="28.5489" cy="36.6143" r="6.00543" fill="#7AE582" />
+                            <circle cx="51.1575" cy="36.6143" r="6.00543" fill="#7AE582" />
+                            <ellipse cx="39.8533" cy="47.212" rx="7.41848" ry="6.00543" fill="#7AE582" />
+                        </svg>
+                        <div class="card__content">
+                            <div class="card__title">1 из 3</div>
+                            <p class="card__text">животных теряются хотя бы один раз в своей жизни</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="always-connected black_section">
+            <div class="blocks">
+                <div class="block c-w" style="left: 38px;"></div>
+                <div class="block c-w" style="left: 164px;"></div>
+                <div class="block c-w" style="left: 195px;"></div>
+                <div class="block c-b" style="top:-31px;left: 69px;"></div>
+                <div class="block c-b" style="top:-31px;left: 133px;"></div>
+                <div class="block c-b" style="top:-31px;left: 322px;"></div>
+                <div class="block c-b" style="top:-62px;left: 164px;"></div>
+                <div class="block c-b" style="top:-62px;left: 259px;"></div>
+                <div class="block b r c-w" style="right: 95px;"></div>
+                <div class="block b r c-w" style="right: 126px;"></div>
+            </div>
+            <div class="container">
+                <div class="lr-section">
+                    <div class="left">
+                        <h3 class="title">Всегда быть</br>на связи</h3>
+                        <p class="text">Как только кто-то отсканирует QR-код, приложение выведет всю контактную
+                            информацию и поможет с вами связаться.</p>
+                        <a href="#" class="btn">Смотреть видео</a>
+                    </div>
+                    <div class="right">
+                        <img class="image" src="assets/img1.jpg" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="new-qrs">
+            <div class="container">
+                <div class="lr-section lr-reversed">
+                    <div class="left">
+                        <h3 class="title">QR-коды нового поколения</h3>
+                        <p class="text">Гибкие настройки способов связи, режим защиты данных и многое другое. В МОЙ КОД
+                            есть все, чтобы быть на связи, когда это нужнее всего.</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                    <div class="right">
+                        <img class="image" src="assets/img2.jpg" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="everything-protected black_section">
+            <div class="blocks">
+                <div class="block c-b" style="top:-31px;left: 31px;"></div>
+                <div class="block c-b" style="top:-31px;left: 62px;"></div>
+                <div class="block c-b" style="top:-31px;left: 133px;"></div>
+                <div class="block b r c-b" style="bottom: -62px;right: 0px;"></div>
+                <div class="block b r c-b" style="bottom: -31px;right: 31px;"></div>
+                <div class="block b r c-b" style="bottom: -31px;right: 62px;"></div>
+                <div class="block b r c-b" style="bottom: -31px;right: 126px;"></div>
+                <div class="block b r c-b" style="bottom: -62px;right: 158px;"></div>
+            </div>
+            <div class="container">
+                <div class="lr-section">
+                    <div class="left">
+                        <h3 class="title">Все данные </br>под защитой</h3>
+                        <p class="text">Как только кто-то отсканирует QR-код, приложение выведет всю контактную
+                            информацию и
+                            поможет с вами связаться.</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                    <div class="right">
+                        <img class="image" src="assets/img3.jpg" alt="img">
+                    </div>
+                </div>
+                <div class="how-it-works">
+                    <a class="video" href="#">
+                        <div class="player_preview">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="35" cy="35" r="35" fill="white" />
+                                <path d="M52 35L26.5 49.7224L26.5 20.2776L52 35Z" fill="#292524" />
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="content">
+                        <h4 class="title">Как это работает</h4>
+                        <p class="text">Посмотрите, чтобы понять, как правильно настроить ваш QR-код</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="solutions">
+            <div class="container">
+                <h2 class="title">Найдем решение<br>для каждого.</h2>
+                <h4 class="subtitle">Самые популярные мессенджеры, связь по телефону, e-mail или возможность настроить
+                    собственный способ - уже в приложении.</h4>
+                <div class="tree">
+                    <div class="sm-tree_wrap">
+                        <svg class="sm-tree" id="desktop-tree" width="915" height="379" viewBox="0 0 915 379" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter1_d)">
+                                <path
+                                    d="M16 337H129.041C151.133 337 169.041 319.091 169.041 297V212C169.041 189.909 186.95 172 209.041 172H363"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path
+                                    d="M16 5H129.041C151.133 5 169.041 22.9086 169.041 45V132C169.041 154.091 186.95 172 209.041 172H363"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path d="M16 172H363" stroke="white" stroke-width="5" stroke-linejoin="round" />
+                            </g>
+                            <g filter="url(#filter2_d)">
+                                <path
+                                    d="M910 5L796.959 4.99999C774.867 4.99999 756.959 22.9086 756.959 45L756.959 130C756.959 152.091 739.05 170 716.959 170L563 170"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path
+                                    d="M910 337L796.959 337C774.867 337 756.959 319.091 756.959 297L756.959 210C756.959 187.909 739.05 170 716.959 170L563 170"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path d="M910 170L563 170" stroke="white" stroke-width="5" stroke-linejoin="round" />
+                            </g>
+                            <g filter="url(#filter3_d)">
+                                <rect x="363" y="72" width="200" height="200" rx="40" fill="white" />
+                            </g>
+                            <path
+                                d="M501.667 174.162H464.667V136.476C464.667 123.583 453.667 113.666 441.667 113.666H427.667C414.667 113.666 404.667 123.583 404.667 136.476V150.36C404.667 163.253 414.667 173.17 427.667 173.17H464.667V210.856C464.667 223.749 474.667 233.666 487.667 233.666H501.667C514.667 233.666 524.667 223.749 524.667 210.856V196.972C524.667 185.071 514.667 174.162 501.667 174.162ZM447.667 158.294H426.667C422.667 158.294 419.667 155.319 419.667 151.352V137.468C419.667 133.501 422.667 130.526 426.667 130.526H440.667C444.667 130.526 447.667 133.501 447.667 137.468V158.294ZM508.667 211.848C508.667 215.815 505.667 218.79 501.667 218.79H487.667C483.667 218.79 480.667 215.815 480.667 211.848V191.021H501.667C505.667 191.021 508.667 193.997 508.667 197.964V211.848Z"
+                                fill="#292524" />
+                            <defs>
+                                <filter id="filter1_d" x="0" y="0.5" width="368" height="378"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 1 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="1" />
+                                    <feGaussianBlur stdDeviation="1.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.98 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_1009_2221"
+                                        result="effect2_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-1" dy="5" />
+                                    <feGaussianBlur stdDeviation="2.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.85 0" />
+                                    <feBlend mode="normal" in2="effect2_dropShadow_1009_2221"
+                                        result="effect3_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-2" dy="11" />
+                                    <feGaussianBlur stdDeviation="3.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.5 0" />
+                                    <feBlend mode="normal" in2="effect3_dropShadow_1009_2221"
+                                        result="effect4_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-4" dy="19" />
+                                    <feGaussianBlur stdDeviation="4" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.15 0" />
+                                    <feBlend mode="normal" in2="effect4_dropShadow_1009_2221"
+                                        result="effect5_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-7" dy="30" />
+                                    <feGaussianBlur stdDeviation="4.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.02 0" />
+                                    <feBlend mode="normal" in2="effect5_dropShadow_1009_2221"
+                                        result="effect6_dropShadow_1009_2221" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_1009_2221"
+                                        result="shape" />
+                                </filter>
+                                <filter id="filter2_d" x="547" y="0.5" width="368" height="378"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 1 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="1" />
+                                    <feGaussianBlur stdDeviation="1.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.98 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_1009_2221"
+                                        result="effect2_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-1" dy="5" />
+                                    <feGaussianBlur stdDeviation="2.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.85 0" />
+                                    <feBlend mode="normal" in2="effect2_dropShadow_1009_2221"
+                                        result="effect3_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-2" dy="11" />
+                                    <feGaussianBlur stdDeviation="3.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.5 0" />
+                                    <feBlend mode="normal" in2="effect3_dropShadow_1009_2221"
+                                        result="effect4_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-4" dy="19" />
+                                    <feGaussianBlur stdDeviation="4" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.15 0" />
+                                    <feBlend mode="normal" in2="effect4_dropShadow_1009_2221"
+                                        result="effect5_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-7" dy="30" />
+                                    <feGaussianBlur stdDeviation="4.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.02 0" />
+                                    <feBlend mode="normal" in2="effect5_dropShadow_1009_2221"
+                                        result="effect6_dropShadow_1009_2221" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_1009_2221"
+                                        result="shape" />
+                                </filter>
+                                <filter id="filter3_d" x="347" y="70" width="100%" height="100%"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 1 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="1" />
+                                    <feGaussianBlur stdDeviation="1.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.98 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_1009_2221"
+                                        result="effect2_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-1" dy="5" />
+                                    <feGaussianBlur stdDeviation="2.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.85 0" />
+                                    <feBlend mode="normal" in2="effect2_dropShadow_1009_2221"
+                                        result="effect3_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-2" dy="11" />
+                                    <feGaussianBlur stdDeviation="3.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.5 0" />
+                                    <feBlend mode="normal" in2="effect3_dropShadow_1009_2221"
+                                        result="effect4_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-4" dy="19" />
+                                    <feGaussianBlur stdDeviation="4" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.15 0" />
+                                    <feBlend mode="normal" in2="effect4_dropShadow_1009_2221"
+                                        result="effect5_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="-7" dy="30" />
+                                    <feGaussianBlur stdDeviation="4.5" />
+                                    <feColorMatrix type="matrix"
+                                        values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.02 0" />
+                                    <feBlend mode="normal" in2="effect5_dropShadow_1009_2221"
+                                        result="effect6_dropShadow_1009_2221" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_1009_2221"
+                                        result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                        <svg class="sm-tree" id="mobile-tree" width="291" height="731" viewBox="0 0 291 731" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter1_m)">
+                                <path
+                                    d="M19 1.99999L19 81.0811C19 103.173 36.9086 121.081 59 121.081L109 121.081C131.091 121.081 149 138.99 149 161.081L149 272"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path
+                                    d="M279 2.00001L279 81.0811C279 103.173 261.091 121.081 239 121.081L189 121.081C166.909 121.081 149 138.99 149 161.081L149 272"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path d="M149 2L149 272" stroke="white" stroke-width="5" stroke-linejoin="round" />
+                            </g>
+                            <g filter="url(#filter2_m)">
+                                <path
+                                    d="M283 692L283 612.919C283 590.827 265.091 572.919 243 572.919L193 572.919C170.909 572.919 153 555.01 153 532.919L153 422"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path
+                                    d="M23 692L23 612.919C23 590.827 40.9086 572.919 63 572.919L113 572.919C135.091 572.919 153 555.01 153 532.919L153 422"
+                                    stroke="white" stroke-width="5" stroke-linejoin="round" />
+                                <path d="M153 692L153 422" stroke="white" stroke-width="5" stroke-linejoin="round" />
+                            </g>
+                            <g filter="url(#filter3_m)">
+                                <rect x="75" y="271.999" width="150" height="150" rx="30" fill="white" />
+                            </g>
+                            <path
+                                d="M179 348.62H151.25V320.355C151.25 310.686 143 303.248 134 303.248H123.5C113.75 303.248 106.25 310.686 106.25 320.355V330.769C106.25 340.438 113.75 347.876 123.5 347.876H151.25V376.141C151.25 385.81 158.75 393.248 168.5 393.248H179C188.75 393.248 196.25 385.81 196.25 376.141V365.727C196.25 356.802 188.75 348.62 179 348.62ZM138.5 336.719H122.75C119.75 336.719 117.5 334.488 117.5 331.512V321.099C117.5 318.124 119.75 315.893 122.75 315.893H133.25C136.25 315.893 138.5 318.124 138.5 321.099V336.719ZM184.25 376.884C184.25 379.86 182 382.091 179 382.091H168.5C165.5 382.091 163.25 379.86 163.25 376.884V361.265H179C182 361.265 184.25 363.496 184.25 366.471V376.884Z"
+                                fill="#292524" />
+                            <defs>
+                                <filter id="filter1_m" x="0.5" y="0" width="286" height="311" filterUnits="userSpaceOnUse"
+                                    color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 1 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dy="1" />
+                                    <feGaussianBlur stdDeviation="1.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.98 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_1009_2221" result="effect2_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-1" dy="5" />
+                                    <feGaussianBlur stdDeviation="2.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.85 0" />
+                                    <feBlend mode="normal" in2="effect2_dropShadow_1009_2221" result="effect3_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-2" dy="11" />
+                                    <feGaussianBlur stdDeviation="3.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.5 0" />
+                                    <feBlend mode="normal" in2="effect3_dropShadow_1009_2221" result="effect4_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-4" dy="19" />
+                                    <feGaussianBlur stdDeviation="4" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.15 0" />
+                                    <feBlend mode="normal" in2="effect4_dropShadow_1009_2221" result="effect5_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-7" dy="30" />
+                                    <feGaussianBlur stdDeviation="4.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.02 0" />
+                                    <feBlend mode="normal" in2="effect5_dropShadow_1009_2221" result="effect6_dropShadow_1009_2221" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_1009_2221" result="shape" />
+                                </filter>
+                                <filter id="filter2_m" x="4.5" y="420" width="286" height="311" filterUnits="userSpaceOnUse"
+                                    color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 1 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dy="1" />
+                                    <feGaussianBlur stdDeviation="1.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.98 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_1009_2221" result="effect2_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-1" dy="5" />
+                                    <feGaussianBlur stdDeviation="2.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.85 0" />
+                                    <feBlend mode="normal" in2="effect2_dropShadow_1009_2221" result="effect3_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-2" dy="11" />
+                                    <feGaussianBlur stdDeviation="3.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.5 0" />
+                                    <feBlend mode="normal" in2="effect3_dropShadow_1009_2221" result="effect4_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-4" dy="19" />
+                                    <feGaussianBlur stdDeviation="4" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.15 0" />
+                                    <feBlend mode="normal" in2="effect4_dropShadow_1009_2221" result="effect5_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-7" dy="30" />
+                                    <feGaussianBlur stdDeviation="4.5" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.02 0" />
+                                    <feBlend mode="normal" in2="effect5_dropShadow_1009_2221" result="effect6_dropShadow_1009_2221" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_1009_2221" result="shape" />
+                                </filter>
+                                <filter id="filter3_m" x="63" y="270.499" width="165.75" height="180.75"
+                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 1 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dy="0.75" />
+                                    <feGaussianBlur stdDeviation="1.125" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.98 0" />
+                                    <feBlend mode="normal" in2="effect1_dropShadow_1009_2221" result="effect2_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-0.75" dy="3.75" />
+                                    <feGaussianBlur stdDeviation="1.875" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.85 0" />
+                                    <feBlend mode="normal" in2="effect2_dropShadow_1009_2221" result="effect3_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-1.5" dy="8.25" />
+                                    <feGaussianBlur stdDeviation="2.625" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.5 0" />
+                                    <feBlend mode="normal" in2="effect3_dropShadow_1009_2221" result="effect4_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-3" dy="14.25" />
+                                    <feGaussianBlur stdDeviation="3" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.15 0" />
+                                    <feBlend mode="normal" in2="effect4_dropShadow_1009_2221" result="effect5_dropShadow_1009_2221" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha" />
+                                    <feOffset dx="-5.25" dy="22.5" />
+                                    <feGaussianBlur stdDeviation="3.375" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.901961 0 0 0 0 0.878431 0 0 0 0 1 0 0 0 0.02 0" />
+                                    <feBlend mode="normal" in2="effect5_dropShadow_1009_2221" result="effect6_dropShadow_1009_2221" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_1009_2221" result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                        <ul class="social-media__icons">
+                            <li class="social-media__icon">
+                                <a href="#">
+                                    <svg width="53" height="53" viewBox="0 0 53 53" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M26.4286 0.713867C12.2266 0.713867 0.714355 12.2261 0.714355 26.4281C0.714355 28.4183 0.940735 30.3567 1.3693 32.2183C2.53086 37.2639 3.57963 42.5468 2.11835 47.5138C1.98666 47.9615 1.97799 48.4363 2.09327 48.8885C2.20855 49.3406 2.44351 49.7534 2.77345 50.0833C3.10339 50.4133 3.51613 50.6482 3.96828 50.7635C4.42043 50.8788 4.89528 50.8701 5.34293 50.7384C10.3101 49.2771 15.5936 50.3234 20.6388 51.4873C22.529 51.9233 24.4711 52.1451 26.4286 52.1424C40.6306 52.1424 52.1429 40.6301 52.1429 26.4281C52.1429 12.2261 40.6306 0.713867 26.4286 0.713867ZM20.6121 32.2473C25.8141 37.4467 30.7795 38.1333 32.5332 38.1976C35.1998 38.2953 37.7969 36.2587 38.8075 33.8956C38.9351 33.6016 38.9814 33.2787 38.9416 32.9608C38.9018 32.6428 38.7773 32.3413 38.5812 32.0879C37.1721 30.2879 35.2666 28.9944 33.4049 27.7087C33.0162 27.4399 32.5385 27.3321 32.0721 27.4079C31.6056 27.4836 31.1866 27.737 30.9029 28.115L29.3601 30.4679C29.2789 30.5943 29.1525 30.685 29.0067 30.7214C28.8609 30.7577 28.7068 30.7369 28.5758 30.6633C27.5292 30.0641 26.0043 29.0459 24.9089 27.9504C23.8135 26.855 22.8569 25.3996 22.3195 24.4199C22.2529 24.2954 22.2336 24.151 22.2653 24.0134C22.2969 23.8758 22.3774 23.7544 22.4918 23.6716L24.8678 21.9076C25.2069 21.6127 25.4257 21.2035 25.4826 20.7578C25.5395 20.3121 25.4305 19.861 25.1763 19.4904C24.0243 17.8036 22.6821 15.659 20.7355 14.237C20.4843 14.055 20.19 13.9414 19.8816 13.9076C19.5732 13.8738 19.2613 13.9209 18.9766 14.0441C16.6109 15.0573 14.5641 17.6544 14.6618 20.3261C14.7261 22.0799 15.4126 27.0453 20.6121 32.2473Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-media__icon">
+                                <a href="#">
+                                    <svg width="53" height="38" viewBox="0 0 53 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M47.7271 0.819088C47.8436 0.777318 47.9576 0.737196 48.0766 0.703182C48.9321 0.458614 52.6129 -0.39986 52.2623 3.05341C52.1301 4.66119 50.9408 10.2883 50.0157 16.3749L46.973 33.6715C46.887 34.1602 46.8303 34.6566 46.6802 35.1295C46.4208 35.9469 45.772 37.202 44.201 37.5054C41.8221 37.9647 38.2541 35.8977 37.5932 35.4383C37.0646 35.0938 27.6818 29.926 24.3779 27.3995C23.4528 26.7104 22.3956 25.3323 24.51 23.7246L38.3862 12.2407C39.9721 10.8626 41.5579 7.64705 34.9502 11.5516L16.7525 22.2823C16.55 22.4017 16.3463 22.5181 16.1258 22.5997C15.3949 22.87 13.4355 23.3754 10.3698 22.5762L4.07293 20.8926C2.54948 20.4852 0.135411 19.5679 1.1398 18.3522C1.53143 17.8781 2.38454 17.3562 4.02634 16.8342C17.1885 11.4584 33.3657 5.96877 47.7271 0.819088Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-media__icon">
+                                <a href="#">
+                                    <svg width="53" height="31" viewBox="0 0 53 31" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M51.1201 2.10795C50.5821 3.82694 49.7952 5.45784 48.7844 6.94867L48.8251 6.88438C47.8651 8.48438 46.7186 10.333 45.3858 12.4301C44.2429 14.0858 43.6379 14.943 43.5708 15.0015C43.2653 15.384 43.0678 15.8412 42.9986 16.3258L42.9965 16.3408C43.0511 16.7774 43.2538 17.1821 43.5708 17.4872L44.4279 18.443C49.0136 23.1558 51.5929 26.4044 52.1658 28.1887C52.2744 28.4818 52.3094 28.7971 52.2675 29.1068C52.2257 29.4166 52.1083 29.7113 51.9258 29.9651L51.9301 29.9587C51.7144 30.1812 51.4514 30.3524 51.1606 30.4596C50.8698 30.5668 50.5586 30.6072 50.2501 30.578H50.2586H44.6101C43.8879 30.578 43.2236 30.3251 42.7029 29.9051L42.7094 29.9094C41.9659 29.2998 41.2834 28.6195 40.6715 27.878L40.6522 27.8522C39.6651 26.7365 38.7894 25.7972 38.0251 25.0344C35.4794 22.6144 33.6008 21.4044 32.3894 21.4044C31.9984 21.3693 31.6074 21.4716 31.2836 21.6937L31.2901 21.6894C31.151 21.8638 31.0489 22.0647 30.9899 22.2798C30.931 22.495 30.9164 22.7199 30.9472 22.9408V22.9322C30.8639 23.9321 30.8367 24.9358 30.8658 25.9387V25.9022V28.3858C30.9266 28.6825 30.9058 28.9901 30.8054 29.2758C30.705 29.5615 30.5288 29.8146 30.2958 30.008L30.2936 30.0101C29.2085 30.5004 28.0138 30.6976 26.8286 30.5822L26.8565 30.5844C23.6126 30.5287 20.4454 29.5893 17.6958 27.8672L17.7708 27.9101C14.6002 25.9986 11.8826 23.4214 9.80579 20.3565L9.74793 20.2665C7.73201 17.5783 5.95999 14.7155 4.45293 11.7122L4.30293 11.3822C3.29871 9.43747 2.41629 7.43217 1.66079 5.37795L1.53222 4.98152C1.18194 3.9151 0.958961 2.81101 0.867933 1.69224L0.863647 1.63867C0.863647 0.555809 1.50079 0.014381 2.77508 0.014381H8.41079C8.98055 -0.0302435 9.54614 0.14196 9.99436 0.496524L9.99008 0.492238C10.4186 0.961524 10.7358 1.53795 10.8922 2.18081L10.8986 2.20652C11.8297 4.87292 12.9667 7.46287 14.2994 9.95295L14.1558 9.65938C15.119 11.6159 16.2846 13.466 17.6336 15.1794L17.5844 15.113C18.7272 16.5158 19.6186 17.2172 20.2586 17.2172L20.3272 17.2194C20.4779 17.2196 20.626 17.1801 20.7565 17.1049C20.887 17.0296 20.9955 16.9213 21.0708 16.7908L21.0729 16.7865C21.2781 16.2494 21.3594 15.673 21.3108 15.1001V15.113V6.80081C21.2707 5.85837 21.0373 4.93424 20.6251 4.08581L20.6422 4.12652C20.3922 3.58731 20.0676 3.08597 19.6779 2.63724L19.6844 2.64581C19.325 2.28707 19.0913 1.8218 19.0179 1.31938L19.0158 1.30652C19.0158 0.942237 19.1829 0.614381 19.4444 0.400095L19.4465 0.397952C19.7155 0.151564 20.0674 0.0154025 20.4322 0.0165237H29.3336C29.5571 -0.00955366 29.7835 0.0202607 29.9926 0.103291C30.2017 0.186322 30.3868 0.319971 30.5315 0.492238L30.5336 0.494381C30.8043 0.99447 30.9227 1.56281 30.8744 2.12938V2.11867V13.2037C30.8402 13.6409 30.942 14.0779 31.1658 14.4551L31.1615 14.4465C31.24 14.5638 31.3461 14.66 31.4706 14.7265C31.595 14.793 31.734 14.8279 31.8751 14.828C32.2365 14.8045 32.5871 14.6846 32.8865 14.4808L32.8801 14.4851C33.4629 14.0844 33.9644 13.628 34.3994 13.1115L34.4079 13.1008C35.7318 11.6029 36.9187 9.98929 37.9544 8.27938L38.0379 8.12938C38.7751 6.90795 39.5722 5.40367 40.2944 3.85867L40.4272 3.54367L41.3829 1.63224C41.5512 1.13802 41.8758 0.712009 42.3076 0.418585C42.7394 0.125161 43.255 -0.0197296 43.7765 0.00580919H43.7701H49.4079C50.9308 0.00580919 51.5022 0.706523 51.1222 2.10795H51.1201Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-media__icon">
+                                <a href="#">
+                                    <svg width="53" height="53" viewBox="0 0 53 53" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.48203 15.6024L25.26 1.22599C25.6597 0.98418 26.117 0.856445 26.583 0.856445C27.0491 0.856445 27.5064 0.98418 27.906 1.22599L51.6609 15.605C51.8515 15.7202 52.0092 15.8832 52.1187 16.0781C52.2283 16.2731 52.2858 16.4934 52.2857 16.7174V49.6919C52.2857 50.3796 52.0148 51.0392 51.5326 51.5255C51.0504 52.0118 50.3963 52.285 49.7143 52.285H3.42861C2.74662 52.285 2.09257 52.0118 1.61033 51.5255C1.1281 51.0392 0.857178 50.3796 0.857178 49.6919V16.7148C0.857131 16.4908 0.914669 16.2705 1.02418 16.0755C1.13369 15.8806 1.29144 15.7176 1.48203 15.6024ZM44.5863 21.1859C43.6517 20.0957 42.0076 19.9767 40.9258 20.9208L34.1857 26.8029C29.9031 30.5403 23.5273 30.5706 19.2094 26.8741L12.2136 20.885C11.1236 19.9519 9.48192 20.0859 8.55773 21.1836C7.64426 22.2685 7.77635 23.887 8.85364 24.8095L17.6046 32.3026C22.8617 36.8041 30.6252 36.7677 35.84 32.2172L44.3235 24.8142C45.3919 23.8818 45.5092 22.2625 44.5863 21.1859Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-media__icon">
+                                <a href="#">
+                                    <svg width="53" height="57" viewBox="0 0 53 57" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M39.4978 2.30046C30.8904 0.37641 21.9643 0.37641 13.357 2.30046L12.4295 2.50565C10.0084 3.04696 7.78465 4.24887 6.00543 5.97786C4.22621 7.70685 2.96113 9.89523 2.35073 12.2999C0.168898 20.8973 0.168898 29.9035 2.35073 38.5009C2.93284 40.7942 4.11097 42.8929 5.76567 44.5841C8.77644 47.6613 12.2276 50.8453 12.9388 55.0912L13.0451 55.7257C13.0857 55.9668 13.1902 56.1927 13.3477 56.3797C13.5053 56.5668 13.7101 56.7082 13.9408 56.7892C14.1716 56.8702 14.4198 56.8879 14.6597 56.8404C14.8996 56.7929 15.1224 56.6819 15.3049 56.519L16.5553 55.4005C20.5363 51.8393 25.7913 50.181 31.1163 49.7627C33.9329 49.5415 36.7338 49.1211 39.4978 48.5031L40.4279 48.2979C42.8491 47.7566 45.0728 46.5547 46.852 44.8257C48.6312 43.0967 49.8963 40.9083 50.5067 38.5036C52.6883 29.9062 52.6883 20.9001 50.5067 12.3026C49.8961 9.89762 48.6306 7.709 46.8509 5.97998C45.0712 4.25095 42.8469 3.04924 40.4252 2.50838L39.4978 2.30046ZM15.6635 12.077C15.6639 12.0773 15.6637 12.078 15.6632 12.0779C15.162 12.0056 14.6512 12.1046 14.2134 12.3586C14.2026 12.3649 14.1902 12.3683 14.1776 12.3683C14.1651 12.3683 14.1529 12.3716 14.1421 12.378C13.1227 12.9783 12.2037 13.7328 11.42 14.6199C10.7634 15.3777 10.4077 16.1437 10.3147 16.8824C10.2612 17.3105 10.2967 17.7439 10.4186 18.1544C10.4238 18.1721 10.4359 18.1869 10.4521 18.1959C10.4675 18.2045 10.4793 18.2186 10.485 18.2354C11.2225 20.3955 12.1825 22.4741 13.3542 24.4305C14.8654 27.1793 16.7238 29.7222 18.8836 31.9968C18.8998 32.0139 18.9148 32.0321 18.9284 32.0514L18.9302 32.0539C18.9589 32.0947 18.9941 32.1306 19.0343 32.1602C19.063 32.1814 19.0893 32.2058 19.1124 32.233L19.115 32.2361C19.132 32.256 19.1504 32.2745 19.1703 32.2915L19.2171 32.3316C21.5062 34.5083 24.0639 36.3839 26.8282 37.9127C29.9809 39.6297 31.8972 40.4424 33.0499 40.783C33.0546 40.7844 33.0576 40.7887 33.0576 40.7936C33.0576 40.7984 33.0608 40.8027 33.0654 40.8041C33.3989 40.9064 33.7029 40.9522 34.0097 40.9522C34.9906 40.8797 35.919 40.481 36.647 39.8196C37.5337 39.0338 38.2844 38.1094 38.8691 37.0814C38.8723 37.0758 38.874 37.0694 38.874 37.0629C38.874 37.0568 38.8755 37.0508 38.8784 37.0454C39.4229 36.0088 39.2358 35.0328 38.4445 34.3698C36.8508 32.9774 35.1276 31.7406 33.2984 30.6764C32.0727 30.0116 30.8279 30.4138 30.3245 31.0868L29.2494 32.4438C28.7345 33.0708 27.8303 33.0329 27.709 33.0248C27.6999 33.0242 27.6912 33.0263 27.6834 33.031C27.6736 33.0369 27.6616 33.0385 27.6505 33.0357C22.347 31.6743 19.8081 27.4609 18.784 25.1408C18.3326 24.118 17.8978 22.758 18.7606 22.0469C18.7739 22.036 18.7874 22.0253 18.8012 22.0148L20.1473 20.9314C20.7929 20.4062 21.2416 19.1641 20.5494 17.9384C19.4923 16.1075 18.258 14.3848 16.8643 12.7951C16.561 12.4218 16.1359 12.1673 15.6638 12.0762C15.6632 12.0761 15.663 12.0768 15.6635 12.077ZM28.2891 8.78984C27.9263 8.78984 27.5784 8.93396 27.3218 9.19049C27.0653 9.44702 26.9212 9.79496 26.9212 10.1577C26.9212 10.5205 27.0653 10.8685 27.3218 11.125C27.5784 11.3815 27.9263 11.5257 28.2891 11.5257C31.7499 11.5257 34.6225 12.6556 36.896 14.8223C38.0642 16.0069 38.9752 17.4104 39.5716 18.948C40.1708 20.4882 40.4444 22.1325 40.3732 23.7794C40.3657 23.9591 40.3936 24.1384 40.4554 24.3073C40.5171 24.4761 40.6116 24.6312 40.7333 24.7635C40.979 25.0308 41.3209 25.1896 41.6837 25.2048C42.0465 25.22 42.4005 25.0905 42.6678 24.8448C42.9351 24.599 43.0938 24.2571 43.1091 23.8943C43.1939 21.8684 42.8576 19.8469 42.1214 17.9576C41.382 16.0593 40.2609 14.3329 38.8275 12.8854L38.8001 12.858C35.9795 10.1632 32.4092 8.78984 28.2891 8.78984ZM28.1961 13.2875C27.8333 13.2875 27.4853 13.4317 27.2288 13.6882C26.9723 13.9447 26.8282 14.2927 26.8282 14.6554C26.8282 15.0182 26.9723 15.3662 27.2288 15.6227C27.4853 15.8792 27.8333 16.0234 28.1961 16.0234H28.2426C30.7377 16.2012 32.5542 17.0329 33.8264 18.3981C35.1314 19.8043 35.8071 21.5525 35.7552 23.7138C35.7468 24.0766 35.8829 24.4278 36.1336 24.6902C36.3842 24.9527 36.7288 25.1048 37.0916 25.1131C37.4544 25.1215 37.8056 24.9854 38.0681 24.7347C38.3305 24.4841 38.4826 24.1395 38.491 23.7767C38.5566 20.9406 37.6435 18.4928 35.8336 16.5397C35.8324 16.5384 35.8318 16.5367 35.8318 16.535C35.8318 16.5332 35.8311 16.5315 35.8299 16.5302C33.9779 14.5453 31.437 13.4954 28.3794 13.2903L28.3329 13.2848L28.1961 13.2875ZM28.1441 17.87C27.961 17.8539 27.7766 17.8748 27.6018 17.9315C27.427 17.9882 27.2654 18.0795 27.1267 18.2001C26.9879 18.3206 26.8749 18.4679 26.7944 18.6331C26.7138 18.7982 26.6674 18.978 26.6578 19.1615C26.6482 19.345 26.6758 19.5286 26.7387 19.7012C26.8017 19.8739 26.8988 20.0321 27.0242 20.1664C27.1496 20.3007 27.3009 20.4083 27.4688 20.4829C27.6368 20.5575 27.8181 20.5974 28.0018 20.6004C29.1454 20.6606 29.8759 21.0053 30.3355 21.4677C30.7978 21.9327 31.1426 22.6796 31.2055 23.8478C31.2089 24.0314 31.2492 24.2124 31.3241 24.3801C31.3989 24.5477 31.5068 24.6986 31.6412 24.8237C31.7756 24.9488 31.9338 25.0455 32.1063 25.1082C32.2789 25.1708 32.4624 25.1981 32.6457 25.1884C32.829 25.1786 33.0086 25.1321 33.1735 25.0515C33.3385 24.9709 33.4856 24.858 33.606 24.7193C33.7263 24.5807 33.8176 24.4193 33.8743 24.2446C33.9309 24.07 33.9519 23.8857 33.9358 23.7028C33.8483 22.0613 33.334 20.6113 32.2807 19.5444C31.2219 18.4774 29.7801 17.9576 28.1441 17.87Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-media__icon">
+                                <a href="#">
+                                    <svg width="32" height="53" viewBox="0 0 32 53" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.285889 7.14341C0.285889 5.43845 0.948131 3.80332 2.12693 2.59773C3.30573 1.39214 4.90453 0.714844 6.5716 0.714844L25.4287 0.714844C27.0958 0.714844 28.6946 1.39214 29.8734 2.59773C31.0522 3.80332 31.7145 5.43845 31.7145 7.14341V45.7148C31.7145 47.4198 31.0522 49.0549 29.8734 50.2605C28.6946 51.4661 27.0958 52.1434 25.4287 52.1434H6.5716C4.90453 52.1434 3.30573 51.4661 2.12693 50.2605C0.948131 49.0549 0.285889 47.4198 0.285889 45.7148V7.14341ZM19.143 42.5006C19.143 41.6481 18.8119 40.8305 18.2225 40.2277C17.6331 39.6249 16.8337 39.2863 16.0002 39.2863C15.1666 39.2863 14.3672 39.6249 13.7778 40.2277C13.1884 40.8305 12.8573 41.6481 12.8573 42.5006C12.8573 43.353 13.1884 44.1706 13.7778 44.7734C14.3672 45.3762 15.1666 45.7148 16.0002 45.7148C16.8337 45.7148 17.6331 45.3762 18.2225 44.7734C18.8119 44.1706 19.143 43.353 19.143 42.5006Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="on-connect black_section">
+            <div class="blocks">
+                <div class="block c-b" style="top:-62px;left: 54px;"></div>
+                <div class="block c-b" style="top:-31px;left: 85px;"></div>
+                <div class="block c-b" style="top:-31px;left: 116px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 31px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 62px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 93px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 124px;"></div>
+                <div class="block r c-b" style="top:-62px;right: 62px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 186px;"></div>
+                <div class="n500 block b c-b" style="bottom: -31px;left: 150px;"></div>
+                <div class="n500 block b c-b" style="bottom: -62px;left: 181px;"></div>
+                <div class="n500 block b c-b" style="bottom: -62px;left: 212px;"></div>
+                <div class="block b r c-b" style="bottom: -31px;right: 62px;"></div>
+                <div class="block b r c-b" style="bottom: -62px;right: 62px;"></div>
+                <div class="block b r c-b" style="bottom: -31px;right: 93px;"></div>
+                <div class="block b r c-b" style="bottom: -93px;right: 155px;"></div>
+                <div class="n500 block b r c-b" style="bottom: -62px;right: 400px;"></div>
+                <div class="n500 block b r c-b" style="bottom: -31px;right: 431px;"></div>
+            </div>
+            <h2 class="title">Быть на связи - <br>когда это нужнее всего</h2>
+            <div class="slider__wrap" id="on-connect_slider">
+                <div class="arrow arrow-left">
+                    <svg width="44" height="76" viewBox="0 0 44 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M38 70L6 38L38 6" stroke="white" stroke-width="10.6667" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="arrow arrow-right">
+                    <svg width="44" height="76" viewBox="0 0 44 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6L38 38L6 70" stroke="white" stroke-width="10.6667" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="slider__inner">
+                    <ul class="slider">
+                        <li class="slider__item" style="background-image: url('/assets/slider/image1.jpg');">
+                            <div class="content" style="background-color: #CDC1FF;">
+                                <p class="text">
+                                    Нашивка на детскую одежду поможет всегда знать, что ребенок не останется один.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="slider__item" style="background-image: url('/assets/slider/image2.jpg');">
+                            <div class="content" style="background-color: #FFE378;">
+                                <p class="text">
+                                    1 из 3 животных теряется хотя бы раз в жизни. Брелок с QR-кодом позволит оперативно
+                                    связаться с хозяином питомца.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="slider__item" style="background-image: url('/assets/slider/image3.jpg');">
+                            <div class="content" style="background-color: #FCBB6E;">
+                                <p class="text">
+                                    Мы теряем более 3000 вещей в год. Теперь всегда будет надежда, что вас смогут об
+                                    этом
+                                    предупредить.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="slider__item" style="background-image: url('/assets/slider/image4.jpg');">
+                            <div class="content" style="background-color: #7AE582;">
+                                <p class="text">
+                                    Не работает звонок или домофон? Экстренная ситуация в доме? Соседи всегда смогут с
+                                    вами
+                                    связаться.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="try-it">
+            <div class="container">
+                <h2 class="title">Пора попробовать<br>в деле</h2>
+                <h4 class="subtitle">Переходите, чтобы увидеть весь наш ассортимент QR-кодов и быть на связи - когда это нужно.</h4>
+                <ul class="market_links">
+                    <li class="market_link"><a href="#">Ozon</a></li>
+                    <li class="market_link"><a href="#">Wildberries</a></li>
+                    <li class="market_link"><a href="#">Яндекс.Маркет</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="confidence black_section">
+            <div class="blocks">
+                <div class="block c-b" style="top:-31px;left: 0px;"></div>
+                <div class="block c-b" style="top:-31px;left: 186px;"></div>
+                <div class="block c-w" style="top: 0px;left: 0px;"></div>
+                <div class="block c-w" style="top: 0px;left: 62px;"></div>
+                <div class="block c-w" style="top: 0px;left: 93px;"></div>
+                <div class="block c-w" style="top: 0px;left: 279px;"></div>
+                <div class="block c-w" style="top: 31px;left: 248px;"></div>
+                <div class="n500 block r c-b" style="top: -62px;right: 124px;"></div>
+                <div class="n500 block r c-b" style="top: -31px;right: 93px;"></div>
+                <div class="n500 block r c-w" style="top: 0px;right: 93px;"></div>
+                <div class="block b c-b" style="bottom: -31px;left: 93px;"></div>
+                <div class="block b c-b" style="bottom: -62px;left: 124px;"></div>
+                <div class="block b c-b" style="bottom: -62px;left: 155px;"></div>
+                <div class="block b c-b" style="bottom: -31px;left: 186px;"></div>
+                <div class="block b c-b" style="bottom: -31px;left: 217px;"></div>
+                <div class="block b c-b" style="bottom: -31px;left: 248px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 0px;right: 31px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 31px;right: 31px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 0px;right: 93px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 0px;right: 186px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 0px;right: 217px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 31px;right: 248px;"></div>
+                <div class="n500 block b r c-w" style="bottom: 0px;right: 279px;"></div>
+            </div>
+            <div class="container">
+                <h2 class="title">Люди нам доверяют</h2>
+                <ul class="images">
+                    <li class="images__item" style="background-image: url('/assets/stub1.png');"><!--<img src="/assets/stub1.png">--></li>
+                    <li class="images__item" style="background-image: url('/assets/stub2.png');"><!--<img src="/assets/stub2.png">--></li>
+                    <li class="images__item" style="background-image: url('/assets/stub3.png');"><!--<img src="/assets/stub3.png">--></li>
+                    <li class="images__item" style="background-image: url('/assets/stub4.png');"><!--<img src="/assets/stub4.png">--></li>
+                    <li class="images__item" style="background-image: url('/assets/stub5.png');"><!--<img src="/assets/stub5.png">--></li>
+                    <li class="images__item" style="background-image: url('/assets/stub6.png');"><!--<img src="/assets/stub6.png">--></li>
+                </ul>
+            </div>
+        </div>
+        <div class="download">
+            <div class="container">
+                <a href="#" class="btn">Скачать приложение</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="feedback black_section">
+            <div class="blocks">
+                <div class="block r c-b" style="top:-31px;right: 93px;"></div>
+                <div class="block r c-b" style="top:-62px;right: 124px;"></div>
+                <div class="block r c-b" style="top:-62px;right: 155px;"></div>
+                <div class="block r c-b" style="top:-62px;right: 186px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 217px;"></div>
+                <div class="block r c-b" style="top:-31px;right: 248px;"></div>
+                <div class="n500 block r c-b" style="top:-31px;right: 372px;"></div>
+                <div class="n500 block r c-b" style="top:-31px;right: 403px;"></div>
+            </div>
+            <div class="container">
+                <h2 class="title">Пора попробовать<br>в деле</h2>
+                <div class="form-wrap">
+                    <form action="/" method="post" class="form"> 
+                        <div class="row">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" placeholder="Иван Иванов">
+                        </div>
+                        <div class="row">
+                            <label for="email">Ваше E-mail</label>
+                            <input type="text" id="" name="email" placeholder="ivanov@mail.ru">
+                        </div>
+                        <div class="row">
+                            <label for="message">Как мы можем вам помочь?</label>
+                            <textarea type="text" id="" name="message" rows="5" placeholder="Расскажите о проблеме"></textarea>
+                        </div>
+                        <div class="row">
+                            <button class="btn" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                    <div class="imgs">
+                        <img src="/assets/3dqr 3.png">
+                        <img src="/assets/3dqr 4.png">
+                    </div>
+                </div>
+                <div class="links">
+                    <ul class="social-links">
+                        <li class="social-links__item">
+                            <a href="#">
+                                <div class="icon">
+                                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.594973 8.21921L13.4344 0.456381C13.6502 0.325809 13.8971 0.256836 14.1488 0.256836C14.4004 0.256836 14.6474 0.325809 14.8632 0.456381L27.6901 8.22061C27.793 8.2828 27.8782 8.37083 27.9373 8.47611C27.9964 8.58138 28.0275 8.70032 28.0275 8.82131V26.6265C28.0275 26.9979 27.8812 27.3541 27.6208 27.6166C27.3604 27.8792 27.0072 28.0268 26.639 28.0268H1.64606C1.27781 28.0268 0.924643 27.8792 0.664249 27.6166C0.403856 27.3541 0.257568 26.9979 0.257568 26.6265V8.81991C0.257543 8.69892 0.288612 8.57998 0.347745 8.47471C0.406878 8.36943 0.492056 8.2814 0.594973 8.21921ZM23.87 11.2341C23.3654 10.6455 22.4776 10.5812 21.8935 11.091L18.254 14.2672C15.9415 16.2853 12.4988 16.3016 10.1673 14.3056L6.38972 11.0717C5.80114 10.5678 4.91468 10.6402 4.41564 11.2329C3.92239 11.8187 3.99372 12.6927 4.57542 13.1908L9.30068 17.2368C12.1394 19.6675 16.3314 19.6479 19.1472 17.1907L23.7281 13.1933C24.305 12.6899 24.3684 11.8155 23.87 11.2341Z" fill="#292524"/>
+                                    </svg>
+                                </div>
+                                <div class="text">info@cartips.ru</div>
+                            </a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="#">
+                                <div class="icon">
+                                    <svg width="53" height="38" viewBox="0 0 53 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M47.7271 0.819088C47.8436 0.777318 47.9576 0.737196 48.0766 0.703182C48.9321 0.458614 52.6129 -0.39986 52.2623 3.05341C52.1301 4.66119 50.9408 10.2883 50.0157 16.3749L46.973 33.6715C46.887 34.1602 46.8303 34.6566 46.6802 35.1295C46.4208 35.9469 45.772 37.202 44.201 37.5054C41.8221 37.9647 38.2541 35.8977 37.5932 35.4383C37.0646 35.0938 27.6818 29.926 24.3779 27.3995C23.4528 26.7104 22.3956 25.3323 24.51 23.7246L38.3862 12.2407C39.9721 10.8626 41.5579 7.64705 34.9502 11.5516L16.7525 22.2823C16.55 22.4017 16.3463 22.5181 16.1258 22.5997C15.3949 22.87 13.4355 23.3754 10.3698 22.5762L4.07293 20.8926C2.54948 20.4852 0.135411 19.5679 1.1398 18.3522C1.53143 17.8781 2.38454 17.3562 4.02634 16.8342C17.1885 11.4584 33.3657 5.96877 47.7271 0.819088Z"
+                                            fill="#292524" />
+                                    </svg>
+                                </div>
+                                <div class="text">@CartipsBot</div>
+                            </a>
+                        </li>
+                        <li class="social-links__item">
+                            <a href="#">
+                                <div class="icon">
+                                   <svg width="31" height="19" viewBox="0 0 31 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M30.1542 1.26399C30.1539 1.26399 30.1535 1.26423 30.1534 1.26459C29.8306 2.29577 29.3586 3.27409 28.7522 4.16842L28.7766 4.12985C28.2006 5.08985 27.5128 6.19899 26.713 7.45728C26.4848 7.78792 26.2923 8.06549 26.1356 8.28998C25.802 8.76778 25.3631 9.21782 25.2808 9.7947C25.2799 9.80068 25.2798 9.80674 25.2806 9.81273C25.315 10.0712 25.436 10.3106 25.624 10.4916L26.1383 11.065C28.8898 13.8927 30.4373 15.8418 30.781 16.9124C30.8462 17.0883 30.8672 17.2775 30.8421 17.4633C30.817 17.6492 30.7466 17.826 30.637 17.9783C30.6373 17.9778 30.6367 17.9774 30.6364 17.9777C30.5076 18.1096 30.3509 18.2112 30.1779 18.275C30.0034 18.3393 29.8167 18.3636 29.6316 18.346H29.6368H26.2476C25.8143 18.346 25.4158 18.1943 25.1033 17.9423L25.1072 17.9448C24.6611 17.5791 24.2516 17.1709 23.8845 16.726L23.8729 16.7106C23.2806 16.0411 22.7552 15.4776 22.2966 15.0198C20.7692 13.5678 19.642 12.8418 18.9152 12.8418C18.6806 12.8208 18.446 12.8822 18.2518 13.0154C18.2524 13.015 18.2532 13.0158 18.2527 13.0165C18.1707 13.1203 18.1105 13.2395 18.0755 13.3671C18.0402 13.4962 18.0314 13.6311 18.0499 13.7637V13.7586C17.9999 14.3585 17.9836 14.9607 18.001 15.5624V15.5406V16.4889C18.001 16.8492 18.0842 17.2248 17.9648 17.5647C17.9045 17.7361 17.7989 17.888 17.659 18.004C17.6582 18.0048 17.6572 18.0055 17.6561 18.006C17.0055 18.2996 16.2892 18.4177 15.5788 18.3486L15.5955 18.3498C13.6491 18.3165 11.7488 17.7528 10.099 16.7196L10.144 16.7453C8.24169 15.5984 6.61111 14.052 5.36504 12.2131L5.33033 12.1591C4.12077 10.5462 3.05756 8.82851 2.15333 7.02656L2.06333 6.82856C1.46079 5.6617 0.931342 4.45852 0.478042 3.22599L0.400899 2.98813C0.19073 2.34828 0.0569442 1.68583 0.00232729 1.01456L-0.000244141 0.982419C-0.000244141 0.332704 0.382041 0.00784736 1.14661 0.00784736H4.52804C4.8699 -0.0189273 5.20925 0.0843946 5.47818 0.297133L5.47561 0.294562C5.73276 0.576133 5.92304 0.92199 6.0169 1.3077L6.02076 1.32313C6.57939 2.92297 7.26159 4.47694 8.06118 5.97099L7.97504 5.79485C8.55295 6.96874 9.25235 8.07881 10.0618 9.10685L10.0322 9.06699C10.7179 9.9087 11.2528 10.3296 11.6368 10.3296L11.6779 10.3308C11.7683 10.331 11.8571 10.3073 11.9355 10.2621C12.0138 10.217 12.0788 10.152 12.124 10.0737L12.1253 10.0711C12.2484 9.74888 12.2972 9.403 12.268 9.05928V9.06699V4.0797C12.244 3.51424 12.104 2.95976 11.8566 2.4507L11.8669 2.47513C11.7169 2.15161 11.5221 1.8508 11.2883 1.58156C11.2887 1.58202 11.288 1.58255 11.2876 1.58215C11.0746 1.36753 10.936 1.09018 10.8923 0.790847C10.8915 0.785713 10.891 0.780502 10.8911 0.775297C10.8934 0.559864 10.9932 0.366309 11.1482 0.239276L11.1495 0.23799C11.3109 0.0901569 11.522 0.00846023 11.7409 0.00913298H17.0818C17.2158 -0.00651345 17.3517 0.0113752 17.4771 0.0611936C17.6026 0.111012 17.7137 0.191201 17.8005 0.294562C17.8013 0.295414 17.802 0.296387 17.8026 0.297448C17.9644 0.597113 18.0352 0.937511 18.0062 1.27685V1.27042V7.92142C17.9857 8.18374 18.0468 8.44599 18.181 8.67227L18.1785 8.66713C18.2256 8.7375 18.2892 8.79519 18.3639 8.83511C18.4386 8.87502 18.5219 8.89593 18.6066 8.89599C18.8235 8.8819 19.0338 8.80998 19.2135 8.6877L19.2096 8.69028C19.5593 8.44985 19.8602 8.17599 20.1212 7.86613L20.1263 7.8597C20.9207 6.96096 21.6328 5.99279 22.2542 4.96685L22.3043 4.87685C22.7466 4.14399 23.2249 3.24142 23.6582 2.31442L23.7379 2.12542L24.3113 0.978561C24.4123 0.682031 24.607 0.426424 24.8661 0.25037C25.1252 0.0743154 25.4346 -0.012619 25.7475 0.00270426H25.7436H29.1263C30.0398 0.00270426 30.3827 0.422917 30.1551 1.26334C30.155 1.26372 30.1546 1.26399 30.1542 1.26399Z" fill="#292524"/>
+                                    </svg>
+                                </div>
+                                <div class="text">@id13104104</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/bundle.js"></script>
+</body>
+
+</html>

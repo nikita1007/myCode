@@ -1,0 +1,111 @@
+.interestings {
+    padding-top: 115px;
+    padding-bottom: 150px;
+    width: 100%;
+    
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 135px;
+    }
+
+    .card {
+        flex: 0 1 32%;
+        margin: 0 20px;
+        margin-top: 40px;
+        padding: 40px;
+        border-radius: 40px;
+        min-width: 370px;
+        max-width: 386px;
+
+        &:first-child {
+            margin-left: 0;
+            background: #FFF6EB;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            background: #E4F9E4;
+        }
+
+        &:nth-child(2) {
+            background: #F0EFF6;
+        }
+    }
+
+    .card__content {
+        margin-top: 90px;
+
+        .card__title {
+            font-size: 4.2rem;
+            font-family: $secondary_font_family;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 102%;
+        }
+
+        .card__text {
+            font-family: $primary_font_family;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 102%;
+            margin-top: 20px;
+            padding-right: 10px;
+        }
+    }
+}
+@media screen and (max-width: 1120px) {
+    .interestings {
+        .card {
+            flex: 0 1 28%;
+            margin: 30px 15px 0 15px;
+            padding: 30px;
+            border-radius: 40px;
+            min-width: 300px;
+        }
+        .card__content {
+            .card__title {
+                font-size: 3.8rem;
+            }
+            .card__text {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .interestings {
+        padding-top: 115px;
+        .cards {
+            margin-top: 80px;
+        }
+        .card {
+            min-width: 290px;
+        }
+        .card__content {
+            .card__title {
+                font-size: 3.4rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    .interestings {
+        padding-top: 100px;
+        .cards {
+            margin-top: 40px;
+        }
+        .card {
+            min-width: 290px;
+            margin: 0;
+            margin-top: 20px;
+        }
+        .card__content {
+            .card__title {
+                font-size: 3rem;
+            }
+        }
+    }
+}
