@@ -1,0 +1,106 @@
+.how-it-works {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px 32px;
+    background-color: #CDC1FF;
+    border-radius: 60px;
+
+    .video {
+        width: 290px;
+        height: 170px;
+        background-image: url("./assets/video-preview.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 40px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(#292524, 0.15);
+            opacity: 0;
+            transition: opacity .15s linear;
+        }
+
+        svg {
+            z-index: 3;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+
+    .content {
+        margin-left: 50px;
+        h4.title,
+        p.text {
+            color: #292524;
+            font-weight: 400;
+            font-style: normal;
+            line-height: normal;
+        }
+        h4.title {
+            font-family: $secondary_font_family;
+            font-size: 4.2rem;
+        }
+        p.text {
+            margin-top: 24px;
+            font-family: $primary_font_family;
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .how-it-works {
+        .content {
+            margin-left: 30px;
+            h4.title {
+                font-size: 3.6rem;
+            }
+            p.text {
+                margin-top: 20px;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .how-it-works {
+        flex-direction: column;
+        .video {
+            width: 320px;
+        }
+        .content {
+            margin-top: 30px;
+            margin-left: 0;
+            text-align: center;
+            h4.title {
+                font-size: 3.2rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+    .how-it-works {
+        .video {
+            width: 100%;
+        }
+    }
+}

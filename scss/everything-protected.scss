@@ -1,0 +1,16 @@
+.everything-protected {
+    .how-it-works {
+        margin-top: 35px;
+    }
+    .container {
+        padding-bottom: 135px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .everything-protected {
+        .how-it-works {
+            margin-top: 20px;
+        }
+    }
+}

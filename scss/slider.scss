@@ -1,0 +1,113 @@
+.slider__wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    position: relative;
+    overflow-x: hidden;
+
+    .arrow {
+        cursor: pointer;
+        position: absolute;
+        z-index: 6;
+        height: 100%;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &.arrow-left {
+            left: 0px;
+        }
+
+        &.arrow-right {
+            right: 0px;
+        }
+    }
+    
+    .slider {
+        display: flex;
+        align-items: center;
+        transition: transform .2s ease-in-out;
+        transform: translateX(100px);
+        
+        .slider__item {
+            display: flex;
+            align-items: end;
+            height: 550px;
+            width: 385px;
+            border-radius: 40px;
+            overflow: hidden;
+            margin: 0 20px;
+            user-select: none;
+            
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+    
+            .content {
+                max-height: 156px;
+                height: 100%;
+                padding: 30px 20px;
+                border-radius: 40px;
+                
+                p.text {
+                    color: #292524;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+        
+                    font-family: $primary_font_family;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    font-style: normal;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    .slider__wrap {
+        .arrow {
+            display: none;
+        }
+
+        .slider {
+            transform: translateX(40px);
+
+            .slider__item {
+                margin: 0 10px;
+                height: 500px;
+                width: 320px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px)  {
+    .slider__wrap {
+        .slider {
+            transform: translateX(20px);
+
+            .slider__item {
+                height: 500px;
+                width: 280px;
+
+                .content {
+                    padding: 20px 15px;
+                    
+                    p.text {
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+} 

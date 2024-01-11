@@ -1,0 +1,127 @@
+.feedback {
+    padding: 100px 0 60px 0;
+
+    .form-wrap {
+        display: flex;
+        margin-top: 70px;
+    }
+
+    form.form {
+        flex: 0 0 70%;
+        display: flex;
+        flex-direction: column;
+        input,
+        textarea {
+            margin-top: 20px;
+        }
+        textarea {
+            resize: none;
+            overflow-y: clip;
+        }
+        .row {
+            margin-top: 40px;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+        }
+        .btn {
+            display: inline-block;
+            width: fit-content;
+        }
+    }
+
+    .imgs {
+        margin-left: 5%;
+        flex: 0 0 25%;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 240px;
+            filter: drop-shadow(0px 0px 0px #535353)
+                    drop-shadow(-4px 4px 12px rgba(83, 83, 83, 0.98))
+                    drop-shadow(-14px 16px 22px rgba(69, 69, 69, 0.85))
+                    drop-shadow(-32px 37px 29px rgba(57, 57, 57, 0.50))
+                    drop-shadow(-56px 66px 35px rgba(57, 57, 57, 0.15))
+                    drop-shadow(-88px 103px 38px rgba(57, 57, 57, 0.02));
+
+            &:first-child {
+                margin-top: 50px;
+                transform: rotate(52deg);
+            }
+            
+            &:last-child {
+                margin-left: auto;
+                margin-top: 80px;
+                transform: rotate(68deg);
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 100px;
+        row-gap: 25px;
+        align-items: center;
+        margin-top: 100px;
+
+        .social-links__item {
+
+            a {
+                display: flex;
+                align-items: center;
+            }
+            
+            .text {
+                margin-left: 20px;
+                color: #FFF;
+                font-family: $primary_font_family;
+                font-size: 2rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                background-color: #CDC1FF;
+                border-radius: 100%;
+                svg {
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .feedback {
+        form.form {
+            flex-basis: 80%;
+        }
+        .imgs {
+            margin-left: 5%;
+            flex: 0 0 17%;
+            
+            img {
+                width: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feedback {
+        form.form {
+            flex-basis: 100%;
+        }
+        .imgs {
+            display: none;
+        }
+    }
+}

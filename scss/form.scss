@@ -1,0 +1,28 @@
+form.form {   
+    label,
+    input,
+    textarea {
+        font-family: $primary_font_family;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    label {
+        color: #FFF;
+    }
+    input,
+    textarea {
+        padding: 25px 30px;
+        border-radius: 27px;
+        border: 1.3px solid #A7A7A7;
+        background: #FFF;
+    }
+    input {
+        color: #202020;
+        
+        &::placeholder {
+            color: #A7A7A7;
+        }
+    }
+}

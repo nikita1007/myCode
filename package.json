@@ -1,0 +1,21 @@
+{
+  "name": "mycode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass -w ./scss/main.scss:./css/main.css",
+    "js": "watchify js/main.js -o js/bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.69.7"
+  }
+}

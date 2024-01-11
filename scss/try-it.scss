@@ -1,0 +1,39 @@
+.try-it {
+    padding-top: 115px;
+    padding-bottom: 145px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1.title {
+        max-width: 655px;
+    }
+
+    h4.subtitle {
+        margin-top: 30px;
+        max-width: 380px;
+    }
+
+    .market_links {
+        margin-top: 50px;
+        .market_link {
+            margin: 0 12.5px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    .try-it {
+        .market_links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            // flex-direction: column;
+            .market_link {
+                // margin: 0;
+                margin-top: 25px;
+            }
+        }
+    }
+}
