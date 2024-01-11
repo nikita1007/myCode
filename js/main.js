@@ -13,14 +13,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // };
 // var slider_element = document.querySelector("#on-connect_slider");
 // var slider = new slider.Slider(slider_element);
-
-new SimpleSlider(".simple-slider", {
-  speed: 600,
-  autoplay: false,
-  class: {
-    wrapper: "slider-wrapper",
-  },
-});
     
 //* Header
 
