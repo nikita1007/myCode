@@ -687,12 +687,12 @@ h4.subtitle {
 .preview .container::after {
   bottom: 6%;
   left: 4%;
-  background-image: url("./assets/3dqr 1.png");
+  background-image: url("../assets/3dqr 1.png");
 }
 .preview .container::before {
   top: -10%;
   right: 11.5%;
-  background-image: url("./assets/3dqr 2.png");
+  background-image: url("../assets/3dqr 2.png");
 }
 .preview .btn {
   margin-top: 45px;
