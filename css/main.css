@@ -701,11 +701,13 @@ h4.subtitle {
   bottom: 6%;
   left: 4%;
   background-image: url("../assets/3dqr 1.png");
+  animation: qr2 30s ease infinite;
 }
 .preview .container::before {
   top: -10%;
   right: 11.5%;
   background-image: url("../assets/3dqr 2.png");
+  animation: qr1 30s ease infinite;
 }
 .preview .btn {
   margin-top: 45px;
@@ -716,6 +718,28 @@ h4.subtitle {
   margin-left: 5px;
 }
 
+@keyframes qr1 {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(22%) rotate(40deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg);
+  }
+}
+@keyframes qr2 {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-45%) rotate(40deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg);
+  }
+}
 @media screen and (max-width: 1120px) {
   .preview .preview__text {
     font-size: 7.2rem;
@@ -732,6 +756,28 @@ h4.subtitle {
   .preview .container::before {
     top: -15%;
     right: 12%;
+  }
+  @keyframes qr1 {
+    0% {
+      transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateY(40%) rotate(40deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg);
+    }
+  }
+  @keyframes qr2 {
+    0% {
+      transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-65%) rotate(40deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg);
+    }
   }
 }
 @media screen and (max-width: 768px) {
@@ -750,6 +796,28 @@ h4.subtitle {
   .preview .container::before {
     top: -12%;
     right: 0%;
+  }
+  @keyframes qr1 {
+    0% {
+      transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateY(55%) rotate(40deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg);
+    }
+  }
+  @keyframes qr2 {
+    0% {
+      transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-75%) rotate(40deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg);
+    }
   }
 }
 @media screen and (max-width: 550px) {
@@ -789,10 +857,34 @@ h4.subtitle {
   .preview .container::after {
     bottom: 30%;
     left: -20%;
+    animation: qr2 50s ease infinite;
   }
   .preview .container::before {
     top: -20%;
     right: -10%;
+    animation: qr1 50s ease infinite;
+  }
+  @keyframes qr1 {
+    0% {
+      transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateY(120%) rotate(40deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg);
+    }
+  }
+  @keyframes qr2 {
+    0% {
+      transform: translateY(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-125%) rotate(40deg);
+    }
+    100% {
+      transform: translateY(0%) rotate(0deg);
+    }
   }
 }
 .interestings {
