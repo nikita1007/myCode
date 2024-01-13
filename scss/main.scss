@@ -9,6 +9,10 @@ body {
     font-family: $primary_font_family;
 }
 
+main.main,
+footer.footer {
+    overflow-x: hidden;
+}
 .wrap {
     padding: 0 15px;
 }

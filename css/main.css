@@ -324,6 +324,11 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+main.main,
+footer.footer {
+  overflow-x: hidden;
+}
+
 .wrap {
   padding: 0 15px;
 }
@@ -565,6 +570,9 @@ h4.subtitle {
   overflow-x: hidden;
 }
 .slider__wrap .arrow {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
   position: absolute;
   z-index: 6;
@@ -650,6 +658,11 @@ h4.subtitle {
   }
   .slider__wrap .slider .slider__item .content p.text {
     font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .slider__wrap .slider {
+    transform: translateX(10px);
   }
 }
 .preview {
@@ -905,7 +918,7 @@ h4.subtitle {
 .how-it-works .video {
   width: 290px;
   height: 170px;
-  background-image: url("./assets/video-preview.jpg");
+  background-image: url("../assets/video-preview.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
