@@ -25,7 +25,7 @@ footer.footer {
 }
 
 .btn {
-    background-color: #E6E0FF;
+    background-color: #CDC1FF;
     border-radius: 50px;
     padding: 17px 26px;
     
@@ -36,11 +36,11 @@ footer.footer {
     font-weight: 500;
     line-height: normal;
     cursor: pointer;
-
+    
     transition: background-color .2s linear;
 
     &:hover {
-        background-color: #CDC1FF;
+        background-color: #E6E0FF;
     }
 }
 
@@ -109,10 +109,10 @@ h2.title {
 h4.subtitle {
     color: #292524;
     text-align: center;
-    font-family: $secondary_font_family;
+    font-family: $primary_font_family;
     font-size: 2rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
 }
 

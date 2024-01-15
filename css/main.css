@@ -341,7 +341,7 @@ footer.footer {
 }
 
 .btn {
-  background-color: #E6E0FF;
+  background-color: #CDC1FF;
   border-radius: 50px;
   padding: 17px 26px;
   color: #000;
@@ -354,7 +354,7 @@ footer.footer {
   transition: background-color 0.2s linear;
 }
 .btn:hover {
-  background-color: #CDC1FF;
+  background-color: #E6E0FF;
 }
 
 .black_section {
@@ -419,10 +419,10 @@ h2.title {
 h4.subtitle {
   color: #292524;
   text-align: center;
-  font-family: "Unbounded", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 2rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
 }
 
@@ -932,7 +932,7 @@ h4.subtitle {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 2rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 102%;
   margin-top: 20px;
   padding-right: 10px;
@@ -1150,7 +1150,7 @@ h4.subtitle {
   justify-content: center;
   background-color: #CDC1FF;
   border-radius: 20px;
-  box-shadow: 0 0 0px 0px rgb(165, 155, 207);
+  box-shadow: 0px 0px 0px 0px rgb(131, 105, 238);
   transition: box-shadow 0.15s linear;
 }
 .tree .social-media__icons .social-media__icon svg path {
@@ -1159,10 +1159,7 @@ h4.subtitle {
   transition: color 0.15s linear;
 }
 .tree .social-media__icons .social-media__icon:hover a {
-  box-shadow: 0 0 15px 2px rgb(165, 155, 207);
-}
-.tree .social-media__icons .social-media__icon:hover svg path {
-  color: #fafafa;
+  box-shadow: 0px 0px 12px 0px rgb(131, 105, 238);
 }
 .tree .social-media__icons .social-media__icon:nth-child(1),
 .tree .social-media__icons .social-media__icon:nth-child(2),

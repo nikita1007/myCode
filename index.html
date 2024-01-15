@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Unbounded&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Unbounded&display=swap"
         rel="stylesheet">
 
     <!-- Own styles -->
@@ -53,10 +53,10 @@
             </div>
             <nav class="navigate header__item">
                 <ul class="navigate__list">
-                    <li class="navigate_list_item"><a href="#">О приложении</a></li>
-                    <li class="navigate_list_item"><a href="#">Почему мы?</a></li>
-                    <li class="navigate_list_item"><a href="#">Отзывы</a></li>
-                    <li class="navigate_list_item"><a href="#">Ассортимент</a></li>
+                    <li class="navigate_list_item"><a href="#anchor__about_app">О приложении</a></li>
+                    <li class="navigate_list_item"><a href="#anchor__why_us">Почему мы?</a></li>
+                    <li class="navigate_list_item"><a href="#anchor__reviews">Отзывы</a></li>
+                    <li class="navigate_list_item"><a href="#anchor__assortment">Ассортимент</a></li>
                     <li class="navigate_list_item" id="download_button"><a href="#">Скачать</a></li>
                 </ul>
             </nav>
@@ -71,7 +71,7 @@
         <div class="preview">
             <div class="container">
                 <h1 class="preview__text">Сервис умных qr-кодов</h1>
-                <a class="btn" href="#">Посмотреть ассортимент
+                <a class="btn" href="#anchor__assortment">Посмотреть ассортимент
                     <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.3105 1C10.3105 0.57852 9.96885 0.236842 9.54737 0.236842H2.67895C2.25747 0.236842 1.91579 0.57852 1.91579 1C1.91579 1.42148 2.25747 1.76316 2.67895 1.76316H8.78421V7.86842C8.78421 8.2899 9.12589 8.63158 9.54737 8.63158C9.96885 8.63158 10.3105 8.2899 10.3105 7.86842V1ZM1.53963 10.087L10.087 1.53963L9.00773 0.460366L0.460366 9.00773L1.53963 10.087Z"
@@ -201,7 +201,7 @@
                         <img class="image" src="assets/img3.jpg" alt="img">
                     </div>
                 </div>
-                <div class="how-it-works">
+                <div class="how-it-works" id="anchor__about_app">
                     <a class="video" href="#">
                         <div class="player_preview">
                             <svg width="70" height="70" viewBox="0 0 70 70" fill="none"
@@ -624,7 +624,7 @@
                 </div>
             </div>
         </div>
-        <div class="on-connect black_section">
+        <div class="on-connect black_section" id="anchor__why_us">
             <div class="blocks">
                 <div class="block c-b" style="top:-62px;left: 54px;"></div>
                 <div class="block c-b" style="top:-31px;left: 85px;"></div>
@@ -698,18 +698,18 @@
                 </div>
             </div>
         </div>
-        <div class="try-it">
+        <div class="try-it" id="anchor__assortment">
             <div class="container">
                 <h2 class="title">Пора попробовать<br>в деле</h2>
                 <h4 class="subtitle">Переходите, чтобы увидеть весь наш ассортимент QR-кодов и быть на связи - когда это нужно.</h4>
                 <ul class="market_links">
-                    <li class="market_link"><a href="#">Ozon</a></li>
-                    <li class="market_link"><a href="#">Wildberries</a></li>
-                    <li class="market_link"><a href="#">Яндекс.Маркет</a></li>
+                    <li class="market_link"><a href="https://www.ozon.ru/seller/moy-kod-982295/avtotovary-8500/?miniapp=seller_982295">Ozon</a></li>
+                    <li class="market_link"><a href="https://www.wildberries.ru/brands/310800591-moy-kod">Wildberries</a></li>
+                    <li class="market_link"><a href="https://market.yandex.ru/business--moi-kod/56021387">Яндекс.Маркет</a></li>
                 </ul>
             </div>
         </div>
-        <div class="confidence black_section">
+        <div class="confidence black_section" id="anchor__reviews">
             <div class="blocks">
                 <div class="block c-b" style="top:-31px;left: 0px;"></div>
                 <div class="block c-b" style="top:-31px;left: 186px;"></div>
@@ -747,7 +747,7 @@
                 </ul>
             </div>
         </div>
-        <div class="download">
+        <div class="download" id="anchor__download">
             <div class="container">
                 <a href="#" class="btn">Скачать приложение</a>
             </div>
@@ -823,6 +823,9 @@
                                 </div>
                                 <div class="text">@moicode</div>
                             </a>
+                        </li>
+                        <li class="social-links__item">
+                            <a class="btn" href="#">Обратиться в поддержку</a>
                         </li>
                     </ul>
                 </div>
