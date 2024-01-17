@@ -51,15 +51,16 @@
         h4.title,
         p.text {
             color: #292524;
-            font-weight: 400;
             font-style: normal;
             line-height: normal;
         }
         h4.title {
+            font-weight: 400;
             font-family: $secondary_font_family;
             font-size: 4.2rem;
         }
         p.text {
+            font-weight: 500;
             margin-top: 24px;
             font-family: $primary_font_family;
             font-size: 2rem;
@@ -84,6 +85,7 @@
 @media screen and (max-width: 550px) {
     .how-it-works {
         flex-direction: column;
+        padding-bottom: 55px;
         .video {
             width: 320px;
         }

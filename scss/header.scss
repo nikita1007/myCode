@@ -22,7 +22,7 @@ header.header {
     .header__item {
         background-color: $header_item_bg;
         padding: 14px 30px;
-        box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.05);
+        box-shadow: -8px 17px 42px 0px rgba(41, 37, 36, 0.10);
         border-radius: 100px;
     }
 
@@ -81,7 +81,7 @@ header.header {
         min-width: 60px;
         width: 60px;
         border-radius: 30px;
-        box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.05);
+        box-shadow: -8px 17px 42px 0px rgba(41, 37, 36, 0.10);
         z-index: 101;
         cursor: pointer;
         position: relative;

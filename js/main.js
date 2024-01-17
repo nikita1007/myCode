@@ -6,6 +6,47 @@ function getStyleParam(element, attr) {
   return window.getComputedStyle(element, null).getPropertyValue(attr);
 }
 
+//* Header
+
+const header = document.querySelector("header.header");
+const navigate = header.querySelector(".navigate");
+const navigate_btn = header.querySelector(".burger-btn");
+
+let navigateEventIsActive = false;
+navigate_btn.addEventListener("click", () => {
+  if (navigateEventIsActive) return 0;
+
+  navigateEventIsActive = true;
+  navigate_btn.classList.toggle("active");
+
+  if (navigate_btn.classList.contains("open")) {
+    navigate_btn.classList.remove("open");
+    navigate_btn.classList.add("close");
+  } else {
+    navigate_btn.classList.add("open");
+    navigate_btn.classList.remove("close");
+  }
+
+  navigate.classList.toggle("show");
+});
+navigate_btn.addEventListener("animationend", () => {
+  navigate_btn.classList.remove("close");
+});
+navigate.addEventListener("transitionend", () => {
+  navigateEventIsActive = false;
+});
+
+window.addEventListener("scroll", () => {
+  if (navigate_btn.classList.contains("open") && !navigateEventIsActive) {
+    navigate_btn.classList.remove("open");
+    navigate.classList.remove("show");
+    navigate_btn.classList.remove("active");
+    navigate_btn.classList.add("close");
+  }
+});
+//* ~Header
+
+
 //* Slider
 
 // Получаем ключ под размер экрана (нужен, чтобы выбирать правильные margin-ы и transform)
@@ -43,8 +84,8 @@ slider_elements.items =
 let reservedTransformLeft = {
   1120: 100,
   768: 40,
-  375: 20,
-  320: 10,
+  375: 40,
+  320: 20,
 };
 let reservedMargin = {
   1120: 20,
@@ -221,34 +262,117 @@ slider_elements.slider.ontransitionend = () => {
 
 //* ~Slider
 
-//* Header
+//* Form
+const form = document.querySelector("form.form");
+const formInputs = [...form.querySelectorAll("input"), ...form.querySelectorAll("textarea")];
+const submitBtn = form.querySelector("button[type='submit']")
 
-const header = document.querySelector("header.header");
-const navigate = header.querySelector(".navigate");
-const navigate_btn = header.querySelector(".burger-btn");
 
-let navigateEventIsActive = false;
-navigate_btn.onclick = () => {
-  if (navigateEventIsActive) return 0;
-
-  navigateEventIsActive = true;
-  navigate_btn.classList.toggle("active");
-
-  if (navigate_btn.classList.contains("open")) {
-    navigate_btn.classList.remove("open");
-    navigate_btn.classList.add("close");
-  } else {
-    navigate_btn.classList.add("open");
-    navigate_btn.classList.remove("close");
+function checkInputEmpty(inputs) {
+  let result = {
+    res: true,
+    emptyInputs: []
   }
 
-  navigate.classList.toggle("show");
-};
-navigate_btn.onanimationend = () => {
-  navigate_btn.classList.remove("close");
-};
-navigate.ontransitionend = () => {
-  navigateEventIsActive = false;
-};
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value.trim() === '') {
+      result.res = false;
+      result.emptyInputs.push(inputs[i]);
+    }
+  }
 
-//* ~Header
+  return result;
+}
+
+async function postData(url = "", data = {}) {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  return response.json();
+}
+
+function sendData(send_data) {
+  try {
+    postData("../mailsend.php", send_data).then((data) => {
+      if (data.status == 200) {
+        formInputs.forEach((element) => {
+          element.value = "";
+        });
+        form.querySelector(".form_answer").style.display = "";
+      }
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+})
+
+formInputs.forEach(input => {
+  input.addEventListener("input", (event) => {
+    input.classList.remove("uncorrect");
+  })
+});
+
+const phone_input = form.querySelector("input#phone");
+let remember_phone = "";
+phone_input.addEventListener("input", (event) => {
+  phone_input.classList.remove("uncorrect");
+
+  event.preventDefault();
+  
+  if (event.inputType === "deleteContentBackward") {
+    if (remember_phone.length == 2) {
+      remember_phone = "+7";
+    } else {
+      remember_phone = remember_phone.substring(0, remember_phone.length-1);
+    }
+  } else if (parseInt(event.data)) {
+    if (remember_phone == "") {
+      remember_phone = "+7" + event.data;
+    } else {
+      if (remember_phone.length < 12) {
+        remember_phone += event.data;
+      }
+    }
+  }
+
+  phone_input.value = remember_phone;
+});
+phone_input.addEventListener("click", (event) => {
+  phone_input.classList.remove("uncorrect");
+
+  if (remember_phone == "") {
+    remember_phone = "+7";
+  }
+
+  phone_input.value = remember_phone;
+});
+
+submitBtn.addEventListener("click", () => {
+  const ch = checkInputEmpty(formInputs);
+  if (ch.res && phone_input.value.length == 12) {
+    const data = {};
+    data["name"] = formInputs[0].value;
+    data["email"] = formInputs[1].value;
+    data["phone"] = formInputs[2].value;
+    data["message"] = formInputs[3].value;
+
+    sendData(data);
+  } else {
+    ch.emptyInputs.forEach((inp) => {
+      inp.classList.add("uncorrect");
+    });
+    form.querySelector(".form_answer").style.display = "";
+    form.querySelector(".form_answer").innerText = "Какие-то из полей заполнены не до конца или не верно!";
+  }
+});
+
+//* ~Form

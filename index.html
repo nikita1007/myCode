@@ -645,7 +645,7 @@
                 <div class="n500 block b r c-b" style="bottom: -62px;right: 400px;"></div>
                 <div class="n500 block b r c-b" style="bottom: -31px;right: 431px;"></div>
             </div>
-            <h2 class="title">Быть на связи - <br>когда это нужнее всего</h2>
+            <h2 class="title">Быть на связи&nbsp;-<br> когда это нужнее всего</h2>
             <div class="slider__wrap" id="on-connect_slider">
                 <div class="arrow arrow-left">
                     <svg width="44" height="76" viewBox="0 0 44 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -768,21 +768,28 @@
             <div class="container">
                 <h2 class="title">Связаться с нами</h2>
                 <div class="form-wrap">
-                    <form action="./" method="post" class="form"> 
+                    <form class="form"> 
                         <div class="row">
                             <label for="name">Ваше имя</label>
                             <input type="text" id="name" name="name" placeholder="Иван Иванов">
                         </div>
                         <div class="row">
                             <label for="email">Ваше E-mail</label>
-                            <input type="text" id="" name="email" placeholder="ivanov@mail.ru">
+                            <input type="text" id="email" name="email" placeholder="ivanov@mail.ru">
+                        </div>
+                        <div class="row">
+                            <label for="phone">Ваше телефон</label>
+                            <input type="text" id="phone" name="phone" placeholder="+78881234567">
                         </div>
                         <div class="row">
                             <label for="message">Как мы можем вам помочь?</label>
-                            <textarea type="text" id="" name="message" rows="5" placeholder="Расскажите о проблеме"></textarea>
+                            <textarea type="text" id="message" name="message" rows="5" placeholder="Расскажите о проблеме"></textarea>
                         </div>
                         <div class="row">
                             <button class="btn" type="submit">Отправить</button>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <p class="form_answer" style="display: none;">Ваш ответ успешно отправлен!</p>
                         </div>
                     </form>
                     <div class="imgs">

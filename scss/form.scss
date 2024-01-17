@@ -17,12 +17,28 @@ form.form {
         border-radius: 27px;
         border: 1.3px solid #A7A7A7;
         background: #FFF;
-    }
-    input {
-        color: #202020;
-        
+        &.uncorrect {
+            border-color: #dc3545;
+            border-width: 2px;
+            
+            &::placeholder {
+                color: #dc3545 !important;
+            }
+        }
         &::placeholder {
             color: #A7A7A7;
         }
+    }
+    input {
+        color: #202020;
+    }
+    .form_answer {
+        color: #fff;
+        font-family: $primary_font_family;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        user-select: none;
     }
 }
