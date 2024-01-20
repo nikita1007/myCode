@@ -269,7 +269,7 @@ const formInputs = [...form.querySelectorAll("input"), ...form.querySelectorAll(
 const submitBtn = form.querySelector("button[type='submit']")
 
 
-function checkInputEmpty(inputs) {
+function checkInputCorrect(inputs) {
   let result = {
     res: true,
     emptyInputs: []
@@ -280,9 +280,28 @@ function checkInputEmpty(inputs) {
       result.res = false;
       result.emptyInputs.push(inputs[i]);
     }
+
+    if (inputs[i].getAttribute("pattern")) {
+      if (!checkPattern(inputs[i].value.trim(), inputs[i].getAttribute("pattern"))) {
+        if (result.emptyInputs.indexOf(inputs[i]) == -1) {
+          result.res = false;
+          result.emptyInputs.push(inputs[i]);
+        }
+      }
+    }
   }
 
   return result;
+}
+
+function checkPattern(input, pattern) {
+  if (pattern && input) {
+    if (input.match(pattern)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 async function postData(url = "", data = {}) {
@@ -304,13 +323,14 @@ function sendData(send_data) {
           element.value = "";
         });
         form.querySelector(".form_answer").style.display = "";
+        form.querySelector(".form_answer").innerText =
+          "Ваш ответ успешно отправлен!";
       }
     });
   } catch (error) {
     console.error(error);
   }
 }
-
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -331,13 +351,13 @@ phone_input.addEventListener("input", (event) => {
   
   if (event.inputType === "deleteContentBackward") {
     if (remember_phone.length == 2) {
-      remember_phone = "+7";
+      remember_phone = "+";
     } else {
       remember_phone = remember_phone.substring(0, remember_phone.length-1);
     }
-  } else if (parseInt(event.data)) {
+  } else if (!isNaN(Number.parseInt(event.data))) {
     if (remember_phone == "") {
-      remember_phone = "+7" + event.data;
+      remember_phone = "+" + event.data;
     } else {
       if (remember_phone.length < 12) {
         remember_phone += event.data;
@@ -351,14 +371,22 @@ phone_input.addEventListener("click", (event) => {
   phone_input.classList.remove("uncorrect");
 
   if (remember_phone == "") {
-    remember_phone = "+7";
+    remember_phone = "+";
   }
 
   phone_input.value = remember_phone;
 });
 
 submitBtn.addEventListener("click", () => {
-  const ch = checkInputEmpty(formInputs);
+  const ch = checkInputCorrect(formInputs);
+
+  formInputs.forEach((inp) => {
+    if (inp.parentNode.querySelector("label > span.label_error")) {
+      inp.parentNode.querySelector("label > span.label_error").style.display =
+        "none";
+    }
+  });
+
   if (ch.res && phone_input.value.length == 12) {
     const data = {};
     data["name"] = formInputs[0].value;
@@ -370,6 +398,9 @@ submitBtn.addEventListener("click", () => {
   } else {
     ch.emptyInputs.forEach((inp) => {
       inp.classList.add("uncorrect");
+      if (inp.parentNode.querySelector("label > span.label_error")) {
+        inp.parentNode.querySelector("label > span.label_error").style.display = "";
+      }
     });
     form.querySelector(".form_answer").style.display = "";
     form.querySelector(".form_answer").innerText = "Какие-то из полей заполнены не до конца или не верно!";
